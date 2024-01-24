@@ -1,0 +1,34 @@
+[2024-01-24T02:16:55.916+0800] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_comments_score.train_test_split_data manual__2024-01-23T18:00:43.625433+00:00 [queued]>
+[2024-01-24T02:16:55.955+0800] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_comments_score.train_test_split_data manual__2024-01-23T18:00:43.625433+00:00 [queued]>
+[2024-01-24T02:16:55.955+0800] {taskinstance.py:1288} INFO - 
+--------------------------------------------------------------------------------
+[2024-01-24T02:16:55.955+0800] {taskinstance.py:1289} INFO - Starting attempt 2 of 2
+[2024-01-24T02:16:55.955+0800] {taskinstance.py:1290} INFO - 
+--------------------------------------------------------------------------------
+[2024-01-24T02:16:55.998+0800] {taskinstance.py:1309} INFO - Executing <Task(BashOperator): train_test_split_data> on 2024-01-23 18:00:43.625433+00:00
+[2024-01-24T02:16:56.007+0800] {standard_task_runner.py:55} INFO - Started process 45139 to run task
+[2024-01-24T02:16:56.023+0800] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'youtube_comments_score', 'train_test_split_data', 'manual__2024-01-23T18:00:43.625433+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/youtube_comments_score.py', '--cfg-path', '/tmp/tmphqpgq13i']
+[2024-01-24T02:16:56.046+0800] {standard_task_runner.py:83} INFO - Job 12: Subtask train_test_split_data
+[2024-01-24T02:16:56.517+0800] {task_command.py:389} INFO - Running <TaskInstance: youtube_comments_score.train_test_split_data manual__2024-01-23T18:00:43.625433+00:00 [running]> on host ml
+[2024-01-24T02:16:56.842+0800] {taskinstance.py:1516} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=youtube_comments_score
+AIRFLOW_CTX_TASK_ID=train_test_split_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-01-23T18:00:43.625433+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=manual__2024-01-23T18:00:43.625433+00:00
+[2024-01-24T02:16:56.843+0800] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-01-24T02:16:56.844+0800] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/am/project/scripts/train_test_split_data.py']
+[2024-01-24T02:16:56.883+0800] {subprocess.py:86} INFO - Output:
+[2024-01-24T02:16:56.901+0800] {subprocess.py:93} INFO - python3: can't open file '/home/am/project/scripts/train_test_split_data.py': [Errno 2] No such file or directory
+[2024-01-24T02:16:56.917+0800] {subprocess.py:97} INFO - Command exited with return code 2
+[2024-01-24T02:16:56.971+0800] {taskinstance.py:1776} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/am/project/venv/lib/python3.10/site-packages/airflow/operators/bash.py", line 196, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2024-01-24T02:16:56.991+0800] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=youtube_comments_score, task_id=train_test_split_data, execution_date=20240123T180043, start_date=20240123T181655, end_date=20240123T181656
+[2024-01-24T02:16:57.029+0800] {standard_task_runner.py:100} ERROR - Failed to execute job 12 for task train_test_split_data (Bash command failed. The command returned a non-zero exit code 2.; 45139)
+[2024-01-24T02:16:57.081+0800] {local_task_job.py:212} INFO - Task exited with return code 1
+[2024-01-24T02:16:57.126+0800] {taskinstance.py:2596} INFO - 0 downstream tasks scheduled from follow-on schedule check

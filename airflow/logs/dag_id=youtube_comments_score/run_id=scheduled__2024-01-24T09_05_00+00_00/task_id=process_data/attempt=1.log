@@ -1,0 +1,27 @@
+[2024-01-24T18:05:19.330+0800] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_comments_score.process_data scheduled__2024-01-24T09:05:00+00:00 [queued]>
+[2024-01-24T18:05:19.345+0800] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_comments_score.process_data scheduled__2024-01-24T09:05:00+00:00 [queued]>
+[2024-01-24T18:05:19.345+0800] {taskinstance.py:1288} INFO - 
+--------------------------------------------------------------------------------
+[2024-01-24T18:05:19.345+0800] {taskinstance.py:1289} INFO - Starting attempt 1 of 2
+[2024-01-24T18:05:19.345+0800] {taskinstance.py:1290} INFO - 
+--------------------------------------------------------------------------------
+[2024-01-24T18:05:19.367+0800] {taskinstance.py:1309} INFO - Executing <Task(BashOperator): process_data> on 2024-01-24 09:05:00+00:00
+[2024-01-24T18:05:19.376+0800] {standard_task_runner.py:55} INFO - Started process 5549 to run task
+[2024-01-24T18:05:19.383+0800] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'youtube_comments_score', 'process_data', 'scheduled__2024-01-24T09:05:00+00:00', '--job-id', '124', '--raw', '--subdir', 'DAGS_FOLDER/youtube_comments_score.py', '--cfg-path', '/tmp/tmpbhiofe3r']
+[2024-01-24T18:05:19.386+0800] {standard_task_runner.py:83} INFO - Job 124: Subtask process_data
+[2024-01-24T18:05:19.557+0800] {task_command.py:389} INFO - Running <TaskInstance: youtube_comments_score.process_data scheduled__2024-01-24T09:05:00+00:00 [running]> on host ml
+[2024-01-24T18:05:19.723+0800] {taskinstance.py:1516} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=youtube_comments_score
+AIRFLOW_CTX_TASK_ID=process_data
+AIRFLOW_CTX_EXECUTION_DATE=2024-01-24T09:05:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-01-24T09:05:00+00:00
+[2024-01-24T18:05:19.725+0800] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-01-24T18:05:19.726+0800] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/am/project/scripts/process_data.py']
+[2024-01-24T18:05:19.743+0800] {subprocess.py:86} INFO - Output:
+[2024-01-24T18:05:20.391+0800] {subprocess.py:97} INFO - Command exited with return code 0
+[2024-01-24T18:05:20.501+0800] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=youtube_comments_score, task_id=process_data, execution_date=20240124T090500, start_date=20240124T100519, end_date=20240124T100520
+[2024-01-24T18:05:20.573+0800] {local_task_job.py:212} INFO - Task exited with return code 0
+[2024-01-24T18:05:20.623+0800] {taskinstance.py:2596} INFO - 1 downstream tasks scheduled from follow-on schedule check

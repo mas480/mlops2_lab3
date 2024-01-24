@@ -1,0 +1,45 @@
+[2024-01-24T05:10:30.246+0800] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_comments_score.train_model scheduled__2024-01-23T20:05:00+00:00 [queued]>
+[2024-01-24T05:10:30.273+0800] {taskinstance.py:1090} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_comments_score.train_model scheduled__2024-01-23T20:05:00+00:00 [queued]>
+[2024-01-24T05:10:30.278+0800] {taskinstance.py:1288} INFO - 
+--------------------------------------------------------------------------------
+[2024-01-24T05:10:30.278+0800] {taskinstance.py:1289} INFO - Starting attempt 2 of 2
+[2024-01-24T05:10:30.278+0800] {taskinstance.py:1290} INFO - 
+--------------------------------------------------------------------------------
+[2024-01-24T05:10:30.312+0800] {taskinstance.py:1309} INFO - Executing <Task(BashOperator): train_model> on 2024-01-23 20:05:00+00:00
+[2024-01-24T05:10:30.318+0800] {standard_task_runner.py:55} INFO - Started process 250003 to run task
+[2024-01-24T05:10:30.330+0800] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'youtube_comments_score', 'train_model', 'scheduled__2024-01-23T20:05:00+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/youtube_comments_score.py', '--cfg-path', '/tmp/tmprrg5bdo1']
+[2024-01-24T05:10:30.332+0800] {standard_task_runner.py:83} INFO - Job 56: Subtask train_model
+[2024-01-24T05:10:30.707+0800] {task_command.py:389} INFO - Running <TaskInstance: youtube_comments_score.train_model scheduled__2024-01-23T20:05:00+00:00 [running]> on host ml
+[2024-01-24T05:10:30.992+0800] {taskinstance.py:1516} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=admin
+AIRFLOW_CTX_DAG_ID=youtube_comments_score
+AIRFLOW_CTX_TASK_ID=train_model
+AIRFLOW_CTX_EXECUTION_DATE=2024-01-23T20:05:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=2
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2024-01-23T20:05:00+00:00
+[2024-01-24T05:10:30.993+0800] {subprocess.py:63} INFO - Tmp dir root location: 
+ /tmp
+[2024-01-24T05:10:31.001+0800] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python3 /home/am/project/scripts/train_model.py']
+[2024-01-24T05:10:31.028+0800] {subprocess.py:86} INFO - Output:
+[2024-01-24T05:10:32.106+0800] {subprocess.py:93} INFO - /home/am/project/scripts/train_model.py:3: DeprecationWarning:
+[2024-01-24T05:10:32.107+0800] {subprocess.py:93} INFO - Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
+[2024-01-24T05:10:32.107+0800] {subprocess.py:93} INFO - (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
+[2024-01-24T05:10:32.107+0800] {subprocess.py:93} INFO - but was not found to be installed on your system.
+[2024-01-24T05:10:32.107+0800] {subprocess.py:93} INFO - If this would cause problems for you,
+[2024-01-24T05:10:32.107+0800] {subprocess.py:93} INFO - please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
+[2024-01-24T05:10:32.107+0800] {subprocess.py:93} INFO - 
+[2024-01-24T05:10:32.107+0800] {subprocess.py:93} INFO -   import pandas as pd
+[2024-01-24T05:10:32.282+0800] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2024-01-24T05:10:32.282+0800] {subprocess.py:93} INFO -   File "/home/am/project/scripts/train_model.py", line 11, in <module>
+[2024-01-24T05:10:32.282+0800] {subprocess.py:93} INFO -     with open('/home/am/project/models/data.pickle', 'wb') as f:
+[2024-01-24T05:10:32.282+0800] {subprocess.py:93} INFO - FileNotFoundError: [Errno 2] No such file or directory: '/home/am/project/models/data.pickle'
+[2024-01-24T05:10:32.333+0800] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-01-24T05:10:32.380+0800] {taskinstance.py:1776} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/am/project/venv/lib/python3.10/site-packages/airflow/operators/bash.py", line 196, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-01-24T05:10:32.384+0800] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=youtube_comments_score, task_id=train_model, execution_date=20240123T200500, start_date=20240123T211030, end_date=20240123T211032
+[2024-01-24T05:10:32.404+0800] {standard_task_runner.py:100} ERROR - Failed to execute job 56 for task train_model (Bash command failed. The command returned a non-zero exit code 1.; 250003)
+[2024-01-24T05:10:32.440+0800] {local_task_job.py:212} INFO - Task exited with return code 1
+[2024-01-24T05:10:32.558+0800] {taskinstance.py:2596} INFO - 0 downstream tasks scheduled from follow-on schedule check
